@@ -1,0 +1,21 @@
+---
+- name: Install nginx and PHP.
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+    - nginx
+    - php-fpm
+  notify: Restart nginx.
+
+- name: Template the index file.
+  template:
+    src: index.php.j2
+    dest: /var/www/html/index.php
+
+- name: Template the site configuration.
+  template:
+    src: default.j2
+    dest: /etc/nginx/sites-available/default
+  notify: Restart nginx.

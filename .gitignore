@@ -1,0 +1,4 @@
+.terraform
+digital_ocean.ini
+terraform.tfstate*
+terraform.tfvars
