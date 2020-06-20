@@ -17,7 +17,7 @@ variable "droplet_count" {
 variable "droplet_image" {
   type        = string
   description = "The distribution or snapshot to create a Droplet with."
-  default     = "debian-9-x64"
+  default     = "debian-10-x64"
 }
 
 variable "droplet_region" {
